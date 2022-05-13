@@ -1,0 +1,68 @@
+.product {
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.product:hover {
+  box-shadow: 0 5px 30px rgba(112, 112, 112, 0.2);
+  transform: scale(1.02);
+}
+
+.cardImage {
+  position: relative;
+}
+
+.cardImage img {
+  max-width: 100%;
+}
+
+.headerButton {
+  display: flex;
+  position: absolute;
+}
+
+.headerButton span {
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(112, 112, 112, 0.2);
+}
+
+.addToFavorite {
+  background: linear-gradient(270deg, #8743ff, #4136f1);
+  margin-left: 10px;
+}
+
+.title {
+  color: #222;
+  font-size: 1rem;
+}
+
+.price {
+  font-family: "iranyekanFn";
+  font-size: 15px;
+  margin-top: 4px;
+  color: #4136f1;
+}
+
+.addToCard {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 10px 0;
+  cursor: pointer;
+  background: linear-gradient(270deg, #8743ff, #4136f1);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 0 15px 30px rgba(20, 103, 204, 0.2);
+  transition: transform .3s ease;
+}
+
+.addToCard:hover {
+    transform: translateY(-4px);
+}
