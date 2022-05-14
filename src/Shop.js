@@ -10,8 +10,13 @@ import styles from "./Shop.module.css";
 //API
 import apiFunc from "./api/api";
 
+//Icons
+import FilterIcon from "./assets/img/filter.svg";
+import CrossIcon from "./assets/img/cross.svg";
+
 const Shop = () => {
   const [productsMain, setProducts] = useState([]);
+  const [openFilter, setOpenFilter] = useState(false);
   let products = productsMain;
   const [filterd, setFilterd] = useState({
     sortBy: "date",
@@ -49,9 +54,7 @@ const Shop = () => {
 
   const shopFilterProducts = (state) => {
     if (state.sortBy === "date") {
-      products = products.sort(
-        (a, b) => parseFloat(a.id) - parseFloat(b.id)
-      );
+      products = products.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
     }
     if (state.sortBy === "top-sells") {
       products = products.sort(
@@ -69,14 +72,10 @@ const Shop = () => {
       );
     }
     if (state.brand.length) {
-      products = products.filter(
-        (product) => product.brand === state.brand
-      );
+      products = products.filter((product) => product.brand === state.brand);
     }
     if (state.color.length) {
-      products = products.filter(
-        (product) => product.color === state.color
-      );
+      products = products.filter((product) => product.color === state.color);
     }
     if (state.priceValue.length) {
       products = products.filter(
@@ -89,15 +88,23 @@ const Shop = () => {
 
   shopFilterProducts(filterd);
 
-  console.log(products);
-  console.log(filterd);
-
   return (
     <div className={styles.container}>
       <Search headerFilterHandler={headerFilterHandler} filterd={filterd} />
       <div className={styles.row}>
-        <aside className={styles.aside}>
-          <Filter asideFilterHandler={asideFilterHandler} products={productsMain} />
+        <div onClick={() => setOpenFilter(!openFilter)} className={openFilter ? styles.closeFilter : styles.filterBottun}>
+          {openFilter ? (
+            <img src={CrossIcon} alt="cross-icon" />
+          ) : (
+            <img src={FilterIcon} alt="filter-icon" />
+          )}
+        </div>
+        <aside className={openFilter ? `${styles.aside} ${styles.openAside}` : `${styles.aside}`}>
+          <Filter
+            asideFilterHandler={asideFilterHandler}
+            products={productsMain}
+            closeFilter={setOpenFilter}
+          />
         </aside>
         <main className={styles.products}>
           {products.map((product) => (

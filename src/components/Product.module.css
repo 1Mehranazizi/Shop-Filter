@@ -3,6 +3,7 @@
   border-radius: 20px;
   background-color: #fff;
   transition: all 0.3s ease;
+  height: fit-content;
 }
 
 .product:hover {
@@ -65,4 +66,29 @@
 
 .addToCard:hover {
     transform: translateY(-4px);
+}
+
+@media(max-width:768px) {
+  .product {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cardBody,.cardImage {
+    flex: 0 0 50%;
+  }
+
+  .cardImage .productImage {
+    width: 120px;
+  }
+
+  .headerButton span {
+    width: 22px;
+    height: 22px;
+    line-height: 32px;
+  }
+
+  .addToFavorite img , .share img {
+    width: 14px;
+  }
 }

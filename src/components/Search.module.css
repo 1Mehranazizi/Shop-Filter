@@ -73,3 +73,14 @@
 .sort.sortOpen .sortBox {
   display: block;
 }
+
+@media(max-width:768px) {
+  .searchBox {
+    width: 300px;
+  }
+
+  .sortBox {
+    top:46px;
+    left: -5px;
+  }
+}

@@ -19,13 +19,13 @@ const Product = ({data}) => {
               <img src={ShareIcon} alt="share" />
           </span>
         </div>
-        <img src={data.image} alt={data.title} />
+        <img src={data.image} alt={data.title} className={styles.productImage} />
       </div>
       <div className={styles.cardBody}>
           <h3 className={styles.title}>{data.title}</h3>
           <p className={styles.price}>{data.price.toLocaleString()} تومان</p>
-      </div>
       <button className={styles.addToCard}>افزودن به سبد خرید</button>
+      </div>
     </div>
   );
 };

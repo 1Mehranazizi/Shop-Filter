@@ -5,7 +5,7 @@ import Slider from "rc-slider";
 import styles from "./Filter.module.css";
 import "rc-slider/assets/index.css";
 
-const Filter = ({ asideFilterHandler, products }) => {
+const Filter = ({ asideFilterHandler, products, closeFilter }) => {
   //Products Color
   let colorArray = [];
   products.map((product) => colorArray.push(product.color));
@@ -90,8 +90,9 @@ const Filter = ({ asideFilterHandler, products }) => {
         </div>
       </div>
       <button
+        id="apply-filter"
         className={styles.applyFilter}
-        onClick={() => asideFilterHandler(state)}
+        onClick={() => {asideFilterHandler(state);closeFilter()}}
       >
         اعمال فیلتر
       </button>
