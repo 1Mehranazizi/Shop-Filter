@@ -7,7 +7,7 @@ import styles from "./Search.module.css";
 import SearchIcon from "../assets/img/search.svg";
 import SortIcon from "../assets/img/sliders.svg";
 
-const Search = () => {
+const Search = ({headerFilterHandler , filterd}) => {
   const [openSort, setOpenSort] = useState(false);
   return (
     <div className={styles.searchBox}>
@@ -18,6 +18,9 @@ const Search = () => {
         type="text"
         placeholder="جستجو..."
         className={styles.searchInput}
+        name="search"
+        onChange={headerFilterHandler}
+        value={filterd.search}
       />
       <div
         className={
@@ -29,9 +32,9 @@ const Search = () => {
           <img src={SortIcon} alt="sort-icon" />
         </button>
         <div className={styles.sortBox}>
-          <span className={styles.sortItem}> جدیدترین</span>
-          <span className={styles.sortItem}> ارزان ترین</span>
-          <span className={styles.sortItem}> پرفروش ترین</span>
+          <span className={styles.sortItem} onClick={headerFilterHandler} id="date"> جدیدترین</span>
+          <span className={styles.sortItem} onClick={headerFilterHandler} id="top-sells"> ارزان ترین</span>
+          <span className={styles.sortItem} onClick={headerFilterHandler} id="top-seller"> پرفروش ترین</span>
         </div>
       </div>
     </div>

@@ -1,0 +1,89 @@
+.header {
+  text-align: center;
+  color: #222;
+  font-size: 1.3rem;
+  font-family: "iranYeknaRegular";
+}
+
+.section {
+  margin: 2.5rem 0;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.priceRange {
+  color: #4136f1;
+  font-family: "iranYekanFn";
+}
+
+.colors {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.colorItem {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #666;
+  transition: border .3s ease;
+}
+
+.colorItem.activeColor {
+  border: 3px solid #8743ff;
+  padding: 4px;
+}
+
+.brands {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.brand {
+  padding: 4px 10px;
+  color: #666;
+  border: 1px solid #e8e8e8;
+  border-radius: 30px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.brand.activeBrand {
+  color: #4136f1;
+  border: 1px solid #4136f1;
+}
+
+.applyFilter {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  background: linear-gradient(270deg, #8743ff, #4136f1);
+  box-shadow: 0 15px 30px rgba(20, 103, 204, 0.2);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background .3s ease;
+  font-size: 1rem;
+}
+
+.applyFilter:hover {
+  background: linear-gradient(270deg, #5629a3, #1f1879);
+}
